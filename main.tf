@@ -233,6 +233,12 @@ resource "azurerm_route_table" "RT" {
     address_prefix = "${var.C-home_public_ip}/32"
     next_hop_type  = "Internet"
   }
+  route {
+    name           = "toonprem"
+    address_prefix = "192.168.0.0/16"
+    next_hop_type  = "VirtualAppliance"
+    next_hop_in_ip_address = "10.0.2.4"
+  }
   timeouts {
     create = "1h"
     read = "1h"
