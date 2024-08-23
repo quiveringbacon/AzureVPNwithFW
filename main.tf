@@ -339,7 +339,7 @@ resource "azurerm_route_table" "GWRT" {
   name                          = "GWRT"
   location                      = azurerm_resource_group.RG.location
   resource_group_name           = azurerm_resource_group.RG.name
-  disable_bgp_route_propagation = false
+  
 
   route {
     name           = "tospoke"
